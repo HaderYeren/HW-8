@@ -1,28 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Анімація</title>
+  <style>
+    #cube {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      animation: move 5s infinite linear;
+    }
+    .face {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      animation: colorChange 3s infinite alternate;
+    }
+    .face:nth-child(1) {
+      background-color: rgba(255, 0, 0, 0.8);
+    }
+    .face:nth-child(2) {
+      background-color: rgba(0, 255, 0, 0.8);
+    }
+    .face:nth-child(3) {
+      background-color: rgba(0, 0, 255, 0.8);
+    }
+    .face:nth-child(4) {
+      background-color: rgba(255, 255, 0, 0.8);
+    }
+    @keyframes move {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: 100px;
+      }
+      50% {
+        top: 100px;
+        left: 100px;
+      }
+      75% {
+        top: 100px;
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+    @keyframes colorChange {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <table>
-        <tr>
-            <td class="gg">ghg</td>
-         <td class="rr">das</td>
-         <td class="hh">adas</td>
-        </tr>
-    </table>
-    <div class="text-box">
-        <h3 class="e">Пофарбуйте мене в рожевий колір (color:pink).</h3>
-        <p>Даний елемент має залишитись неоформленим.</p>
-        <p class="greycol">Пофарбуйте мене в сірий колір (color:grey).</p>
-        <div>Даний елемент має залишитись неоформленим.</div>
-        <div><p class="r">Пофарбуйте мене в червоний колір (color:red).</p></div>
-        <h3>Даний елемент має залишитись неоформленим.</h3>
-        <p class="t">Пофарбуйте мене в зелений колір (color:green).</p>
-        <p class='yellow'>Пофарбуйте мене в жовтий колір (color:yellow).</p>
-        </div>   
+  <div id="cube">
+    <div class="face"></div>
+    <div class="face"></div>
+    <div class="face"></div>
+    <div class="face"></div>
+  </div>
 </body>
 </html>
